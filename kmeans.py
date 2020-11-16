@@ -77,7 +77,7 @@ ax.set_xticks(np.arange(2, 7))
 ax.grid()
 plt.show()
 
-k = 4
+k = 3
 kmeans = KMeans(n_clusters=k, random_state=2020)
 y_pred = kmeans.fit_predict(df)
 
@@ -85,7 +85,7 @@ reduced_data = PCA(n_components=2).fit_transform(df)
 results = pd.DataFrame(reduced_data, columns=['pca1', 'pca2'])
 
 sns.scatterplot(x="pca1", y="pca2", hue=y_pred, data=results)
-plt.title('K-means Clustering with 4 dimensions')
+plt.title('K-means Clustering with 3 dimensions')
 plt.show()
 
 df['cluster'] = y_pred
